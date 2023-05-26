@@ -48,7 +48,26 @@ void DoubleLinkedList::addNode() {
 			return;
 		}
 		newNode->next = START;
+		if (START != NULL)
+			START->prev = newNode;
+		newNode->prev = NULL;
+		START = newNode;
+		return;
 	}
-		
+	/*inserting a node betweent two node*/
+
+	Node* current = START;
+	Node* previous = NULL;
+	while (current->next != NULL && current->next->noMhs < nim);
+	{
+		previous = current; 
+		current = current->next;
+	}
+
+	if (current->next != NULL && nim == current->next->noMhs); {
+		cout << "\nDuplicate roll numbers not allowed" << endl;
+		return;
+ }
+	newNode->next = current->next;
 
 }
