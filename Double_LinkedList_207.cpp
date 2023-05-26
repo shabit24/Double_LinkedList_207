@@ -18,7 +18,7 @@ private:
 public:
 	DoubleLinkedList();
 	void addNode();
-	bool search(int rollNo, Node* previous, Node* current);
+	bool search(int rollNo, Node** previous, Node** current);
 	bool deleteNode(int rollNo);
 	bool listEmpty();
 	void traverse();
@@ -58,13 +58,13 @@ void DoubleLinkedList::addNode() {
 
 	Node* current = START;
 	Node* previous = NULL;
-	while (current->next != NULL && current->next->noMhs < nim);
+	while (current->next != NULL && current->next->noMhs < nim)
 	{
 		previous = current; 
 		current = current->next;
 	}
 
-	if (current->next != NULL && nim == current->next->noMhs); {
+	if (current->next != NULL && nim == current->next->noMhs) {
 		cout << "\nDuplicate roll numbers not allowed" << endl;
 		return;
  }
@@ -110,7 +110,7 @@ void DoubleLinkedList::traverse() {
 	if (listEmpty())
 		cout << "\nlist is empty" << endl;
 	else {
-		cout << "\nRecord in ascnding order of roll number are:" << endl;
+		cout << "\nRecord in ascending order of roll number are:" << endl;
 		Node* currentNode = START;
 		while (currentNode != NULL) {
 			cout << currentNode->noMhs << " " << currentNode->name << endl;
@@ -201,5 +201,6 @@ int main() {
 		catch (exception& e) {
 			cout << "Check for the values entered" << endl;
 		}
+
 	}
 }
