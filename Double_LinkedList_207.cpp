@@ -157,6 +157,7 @@ void DoubleLinkedList::hapus() {
 }
 
 
+
 int main() {
 	DoubleLinkedList obj;
 	while (true) {
